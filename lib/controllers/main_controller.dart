@@ -13,14 +13,11 @@ class MainController extends GetxController {
   }
 
   ThemeMode get getThemeMode {
-    switch (readThmeBox()) {
-      case 'dark':
-        return ThemeMode.dark;
-      case 'light':
-        return ThemeMode.light;
-      default:
-    }
-    return ThemeMode.system;
+    return switch (readThmeBox()) {
+      'dark' => ThemeMode.dark,
+      'light' => ThemeMode.light,
+      _ => ThemeMode.system
+    };
   }
 
   ThemeData get getThemeData {
@@ -37,11 +34,7 @@ class MainController extends GetxController {
 
   void setTheme(ThemeMode theme) {
     _box.write(_key, theme.name);
-    // print(_box.read(_key));
-    Get.changeThemeMode(getThemeMode);
-    Get.changeTheme(isDarkMode ? DarkTheme.dark : LightTheme.light);
-    // Get.forceAppUpdate();
-    // print(isDarkMode);
-    // update();
+    Get.changeTheme(getThemeData);
+    Get.changeThemeMode(theme);
   }
 }
