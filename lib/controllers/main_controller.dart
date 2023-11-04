@@ -23,7 +23,17 @@ class MainController extends GetxController {
     return ThemeMode.system;
   }
 
+  ThemeData get getThemeData {
+    return switch (readThmeBox()) {
+      'dark' => DarkTheme.dark,
+      'light' => LightTheme.light,
+      _ => Get.isPlatformDarkMode ? DarkTheme.dark : LightTheme.light,
+    };
+  }
+
   bool get isDarkMode => Get.isPlatformDarkMode;
+
+  bool get isSystemMode => getThemeMode == ThemeMode.system;
 
   void setTheme(ThemeMode theme) {
     _box.write(_key, theme.name);
