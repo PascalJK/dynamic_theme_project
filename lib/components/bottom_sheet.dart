@@ -8,8 +8,8 @@ Future<T?> loadModalBottomSheet<T>({
     widget,
     isScrollControlled: true,
     elevation: 5,
-    barrierColor: Get.isPlatformDarkMode ? Colors.white.withOpacity(.2) : null,
-    backgroundColor: Get.isPlatformDarkMode ? Colors.black : Colors.white,
+    barrierColor: Get.isDarkMode ? Colors.white.withOpacity(.2) : null,
+    backgroundColor: Get.isDarkMode ? Colors.black : Colors.white,
     clipBehavior: Clip.hardEdge,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(
