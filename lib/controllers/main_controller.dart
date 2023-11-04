@@ -8,9 +8,7 @@ class MainController extends GetxController {
   static final _box = GetStorage();
   static const _key = 'themeMode';
 
-  static String? readThmeBox() {
-    return _box.read(_key);
-  }
+  static String? readThmeBox() => _box.read(_key);
 
   ThemeMode get getThemeMode {
     return switch (readThmeBox()) {
