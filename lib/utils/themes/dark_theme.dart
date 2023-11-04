@@ -6,7 +6,13 @@ class DarkTheme {
   static Color secondaryTextColor = const Color(0xffF8F8FF);
 
   static final dark = ThemeData.light().copyWith(
+    brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.black,
+    colorScheme: ColorScheme.dark(
+      background: Colors.grey.shade900,
+      primary: Colors.grey.shade800,
+      secondary: Colors.grey.shade700,
+    ),
     appBarTheme: const AppBarTheme().copyWith(
       elevation: 3,
       shadowColor: Colors.grey,
@@ -24,7 +30,7 @@ class DarkTheme {
       bodyMedium: TextStyle(fontSize: 16, color: primaryTextColor),
       bodySmall: TextStyle(fontSize: 14, color: secondaryTextColor),
     ),
-    iconTheme: const IconThemeData().copyWith(color: Colors.white),
+    iconTheme: const IconThemeData(color: Colors.white),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 1,
