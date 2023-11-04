@@ -7,6 +7,12 @@ class LightTheme {
 
   static final light = ThemeData.light().copyWith(
     scaffoldBackgroundColor: Colors.white,
+    brightness: Brightness.light,
+    colorScheme: ColorScheme.light(
+      background: Colors.grey.shade400,
+      primary: Colors.grey.shade300,
+      secondary: Colors.grey.shade200,
+    ),
     appBarTheme: const AppBarTheme().copyWith(
       elevation: 3,
       titleTextStyle: const TextStyle().copyWith(color: Colors.black, fontSize: 20),
@@ -23,7 +29,7 @@ class LightTheme {
       bodyMedium: TextStyle(fontSize: 16, color: primaryTextColor),
       bodySmall: TextStyle(fontSize: 14, color: secondaryTextColor),
     ),
-    iconTheme: const IconThemeData().copyWith(color: Colors.black),
+    iconTheme: const IconThemeData(color: Colors.black),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 1,
